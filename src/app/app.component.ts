@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CkoFrames } from 'frames-angular-beta';
+import { CkoFrames } from 'projects/frames-angular-beta/src/public-api';
 
 @Component({
   selector: 'app-root',
@@ -40,7 +40,6 @@ export class AppComponent {
 
   //FRAME_VALIDATION_CHANGED
   onValidationChanged(event) {
-    // console.log("FRAME_VALIDATION_CHANGED: %o", event);
 
     const e = event.element;
     if (event.isValid || event.isEmpty) {
@@ -84,7 +83,6 @@ export class AppComponent {
   onCardValidationChanged(event) {
     const button = <HTMLInputElement>document.getElementById('pay-button');
     const errorMessage = <HTMLInputElement>document.querySelector(".error-message");
-    // console.log("CARD_VALIDATION_CHANGED: %o", event);
     button.disabled = !this.Frames.getFrames().isCardValid();
     if (!this.Frames.getFrames().isCardValid()) {
       errorMessage.textContent = this.getErrorMessage(event);
@@ -100,7 +98,6 @@ export class AppComponent {
 
   //CARD_TOKENIZATION_FAILED
   onCardTokenizationFailed(error) {
-    // console.log("CARD_TOKENIZATION_FAILED: %o", error);
     this.Frames.enableSubmitForm();
   }
 
@@ -111,7 +108,6 @@ export class AppComponent {
 
   //PAYMENT_METHOD_CHANGED
   onPaymentMethodChanged(event) {
-    // console.log("PAYMENT_METHOD_CHANGED: %o", event);
     var pm = event.paymentMethod;
     let container = <HTMLInputElement>document.querySelector(".icon-container.payment-method");
 

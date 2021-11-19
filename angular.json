@@ -1,9 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-test-package": {
+    "frames-angular-lib": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-test-package",
+            "outputPath": "dist/frames-angular-lib",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-test-package:build"
+            "browserTarget": "frames-angular-lib:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-test-package:build:production"
+              "browserTarget": "frames-angular-lib:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-test-package:build"
+            "browserTarget": "frames-angular-lib:build"
           }
         },
         "test": {
@@ -110,15 +110,56 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-test-package:serve"
+            "devServerTarget": "frames-angular-lib:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-test-package:serve:production"
+              "devServerTarget": "frames-angular-lib:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "angular-test-package"
+    },
+    "frames-angular-beta": {
+      "projectType": "library",
+      "root": "projects/frames-angular-beta",
+      "sourceRoot": "projects/frames-angular-beta/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/frames-angular-beta/tsconfig.lib.json",
+            "project": "projects/frames-angular-beta/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/frames-angular-beta/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/frames-angular-beta/src/test.ts",
+            "tsConfig": "projects/frames-angular-beta/tsconfig.spec.json",
+            "karmaConfig": "projects/frames-angular-beta/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/frames-angular-beta/tsconfig.lib.json",
+              "projects/frames-angular-beta/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "frames-angular-lib"
 }

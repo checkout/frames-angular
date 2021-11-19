@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { AngularFramesBeta } from "frames-angular-beta";
+import { AngularFramesBeta } from "projects/frames-angular-beta/src/public-api";
 
 @NgModule({
   declarations: [
