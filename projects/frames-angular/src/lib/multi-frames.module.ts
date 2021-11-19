@@ -22,4 +22,4 @@ import { CvvComponent } from './cvv.component';
     CvvComponent
   ]
 })
-export class AngularFramesBeta { }
+export class Frames { }
