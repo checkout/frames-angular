@@ -1,5 +1,5 @@
 /*
- * Public API Surface of frames-angular-beta
+ * Public API Surface of frames-angular
  */
 export * from './lib/multi-frames.module';
 export { CardNumberComponent } from './lib/card-number.component';

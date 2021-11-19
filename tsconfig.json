@@ -19,9 +19,9 @@
       "dom"
     ],
     "paths": {
-      "frames-angular-beta": [
-        "dist/frames-angular-beta/frames-angular-beta",
-        "dist/frames-angular-beta"
+      "frames-angular": [
+        "dist/frames-angular/frames-angular",
+        "dist/frames-angular"
       ],
     }
   },
