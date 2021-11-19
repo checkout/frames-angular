@@ -1,0 +1,39 @@
+
+<div id="payment-form">
+  <!-- <div class="icon-container payment-method">
+    <img id="logo-payment-method" />
+  </div> -->
+  <label for="card-number">CARD NUMBER</label>
+  <card-number></card-number>
+
+
+  <div class="date-and-code">
+    <div>
+      <label for="expiry-date">EXPIRY DATE</label>
+      <div class="input-container expiry-date">
+        <expiry-date></expiry-date>
+      </div>
+    </div>
+
+
+    <div>
+      <label for="cvv">SECURITY CODE</label>
+      <div class="input-container cvv">
+        <cvv></cvv>
+      </div>
+    </div>
+  </div>
+  <button ion-button (click)="submitCard()" id="pay-button" disabled="">
+    PAY NOW
+  </button>
+
+  <div>
+    <span class="error-message error-message__card-number"></span>
+    <span class="error-message error-message__expiry-date"></span>
+    <span class="error-message error-message__cvv"></span>
+  </div>
+  <img id="icon-cvv-error" src="../../../assets/card-icons/american
+    express.svg"
+    />
+  <p class="success-payment-message">{{ cardToken }}</p>
+</div>
