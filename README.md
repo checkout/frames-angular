@@ -21,7 +21,7 @@ Make sure that you load the Checkout&#46;com CDN script before you mount any Fra
 # :sparkles: Import the main component
 
 ```js
-import { Frames } from 'frames-angular';
+import { CkoFrames } from 'frames-angular';
 ```
 
 # :book: Example Usage
