@@ -1,5 +1,3 @@
-❗️BETA
-
 This project is a minimal Angular wrapper of [Checkout.com Frames](https://docs.checkout.com/integrate/frames). This version only supports the [multiple iframes](https://docs.checkout.com/integrate/frames/frames-customization-guide#Framescustomizationguide-Multipleiframes) configuration in beta version.
 
 # :rocket: Install
